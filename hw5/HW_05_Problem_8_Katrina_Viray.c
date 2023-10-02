@@ -1,9 +1,3 @@
-//
-//  main.c
-//  HW_05_Problem_8_Katrina_Viray
-//
-//  Created by Katrina Viray on 9/20/2023.
-//
 /*
 Write a program that prompts the user for two
 integers and one of the letter codes a, s, m, or d.
