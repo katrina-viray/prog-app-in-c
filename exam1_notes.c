@@ -28,6 +28,10 @@ char name[] = "kat"; // [] tells C we want to store lots of chars in the variabl
 Let's say we define this array in main(): */
 char sentence [201]; // can fill 200 characters + 1 for '\0' for string termination
 
+/* #include <string.h> functions like strcat and strncpy */
+// strlen()- returns the length of the string as an integer. DOES NOT count the NULL terminator, '\0'
+
+
 /* Everytime you pass the 1-D array into a subroutine, it receives the memory address of the 0th cell
 of the 1-D array in the main() function */
 // read in sentence into character array until '\n' is reached.
