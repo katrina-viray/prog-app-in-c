@@ -1,17 +1,27 @@
 #include <stdio.h>
 #include <string.h>
+int main(){
 
 /* Print Statements******************************************************************* */
 int x = 90;
-printf("%d", x) // 90, decimal
-printf("%c", x) // z, char, ASCII representation of z.
-printf("%f", x) // 90, float?
-printf("%e", x) // ?, exponent?
+char str[] = "kat";
+printf("%d", x); // 90, integer number
+printf("%c", x); // z, char, ASCII representation of z.
+printf("%s", str); // kat, string
+printf("%f", x); // 90, float?
+printf("%e", x); // ?, exponent?
 
 /* Getting input from the user******************************************************************* */
+/* scanf(): when scanf is used with the %c conversion specifier, 
+only 1 character is read and stored in the first cell of the array.
+When %s conversion specifier is used, the entire string is read. (for the example below) */
+char stooge3[6] = "Larry";
+scanf("%c", &stooge3[0]);
+scanf("%s", &stooge3[0]);
 
-/* H******************************************************************* */
-
+/* Variables******************************************************************* */
+/* char- can be used to store strings. Don't use [] if you want to store 1 character */
+char name[] = "kat"; // [] tells C we want to store lots of chars in the variable.
 
 /* Strings******************************************************************* */
 /* Given a character array, you can make sentences from manually filling the array. 
@@ -31,6 +41,7 @@ void sentence(char s[201]){
         s[i++] = ch;
     }
     
+    // string termination
     s[i] = '\0';
 }
 
@@ -70,6 +81,7 @@ if(ch == 100)
 
 /* Arrays******************************************************************* */
 // passing in arrays to "subroutines"/functions, etc. 
+// how character arrays work
 
 /* Math Library******************************************************************* */
 // rand, pow, fab, etc
@@ -79,3 +91,16 @@ if(ch == 100)
 /* H******************************************************************* */
 
 /* H******************************************************************* */
+
+/* H******************************************************************* */
+
+/* H******************************************************************* */
+
+/* H******************************************************************* */
+
+/* H******************************************************************* */
+
+/* H******************************************************************* */
+
+/* H******************************************************************* */
+}
