@@ -435,6 +435,19 @@ fclose(fptr); // make sure to close the file to ensure :
 Other programs can use the file (if you want)
 Clean up unnecessary memory space */
 
+// TOPICS I NEED TO LOOK OVER: 
+/* Bitwise operators******************************************************************* */
+// &, |, ^, ~, <<, >>
+
+/* Other types of ints******************************************************************* */
+// Unsigned int- reps non-negative numbers that can't have a sign (positive or zero).
+/* These are usually 2/4 bytes, but depends. 
+   Range can be 0 to #, depending on the bits. 
+   Overflow- w/arithmetic operations, if the result exceeds the max value,
+   the result will wrap around to zero */
+
+/* H******************************************************************* */
+
 /* H******************************************************************* */
 
 /* H******************************************************************* */
