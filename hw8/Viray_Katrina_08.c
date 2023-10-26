@@ -1,63 +1,81 @@
 #include <stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
-int decode(char c)
-{
-    if((c >= 33) && (c <= 71))
-        return c;
-    else
-        return -1;
-}
+int filename(char *ptr);
 
 int main() {
-    FILE *fin, *fout;
-
-    fin = fopen("input1.txt","r");
-    fout = fopen("output.txt","w");
-
-    char c; // char to read in from file in
-    int num, f; // ASCII rep of the char, flag for switch statements
-
-    while(fscanf(fin,"%c", &c) != EOF){
-        num = decode(c);
-        if(num!= -1){
-            if (c > 32 && c < 59){
-                f = 1;
-            }
-            else if (c > 58 && c < 69){
-                f = 2;
-            }
-            else if(c == 69){
-                f = 3;
-            }
-            else if(c == 70){
-                f = 4;
-            }
-            else if (c == 71){
-                f = 5;
-            }
-            switch(f){
-                case 1: // lowercase letters
-                    num = c + 64;
-                    fprintf(fout,"%c", num);
-                    break;
-                case 2: // numbers
-                    num = c - 11;
-                    fprintf(fout,"%c",num);
-                    break;
-                case 3: // blank space
-                    num = 32;
-                    fprintf(fout,"%c",num);
-                    break;
-                case 4: // period
-                    num = 46;
-                    fprintf(fout,"%c",num);
-                    break;
-                case 5: // newline
-                    fprintf(fout,"\n");
-                    break;
-            }
+    char name[200], chunkid[4], format[4], subchunk1id[4];
+    char *ptr = name;
+    int check=0;
+    unsigned int chunksize, samplerate, subchunk1size, byterate;
+    unsigned short int audioformat, numchannels, blockalign,samplebits;
+    FILE *fp;
+        check = filename(ptr);
+        fp = fopen(ptr,"r+b");
+        while ((check == 0) || (fp == NULL)) {
+        if (fp==NULL) printf("this file doesn't exist, enter another name:\n");
+        check = filename(ptr);
+        fp = fopen(ptr,"r+b");
         }
+    fread(chunkid,4,1,fp);
+    printf("%.4s\n",chunkid);
+
+    fread(&chunksize,4,1,fp);
+    printf("%d\n",chunksize);
+
+    fread(&format,4,1,fp);
+    printf("%d\n",format);
+
+    fread(&subchunk1id,4,1,fp);
+    printf("%d\n",subchunk1id);
+
+    fread(&subchunk1size,4,1,fp);
+    printf("%d\n",subchunk1size);
+
+    fread(&audioformat,2,1,fp);
+    printf("%d\n",audioformat);
+
+    fread(&numchannels,2,1,fp);
+    printf("%d\n",numchannels);
+
+    fread(&samplerate,4,1,fp);
+    printf("%d\n",samplerate);
+
+    fread(&byterate,4,1,fp);
+    printf("%d\n",byterate);
+
+    fread(&blockalign,2,1,fp);
+    printf("%d\n",blockalign);
+
+    fread(&samplebits,2,1,fp);
+    printf("%d\n",samplebits);
+    
+    samplerate = samplerate/2;
+    fseek(fp,+24,SEEK_SET);
+    fwrite(&samplerate,4,1,fp);
+
+    byterate = byterate/2;
+    fwrite(&byterate,4,1,fp);
+
+    blockalign = blockalign/2;
+    fwrite(&blockalign,2,1,fp);
+
+    fclose(fp);
+    return 0;
+}
+
+int filename(char *ptr){
+    printf("enter the file name:\n");
+    gets(ptr);
+    char check1 = strstr(ptr,".wav");
+    char check2 = strstr(ptr,".WAV");
+    
+    if (check1 == NULL && check2 == NULL){
+        printf("your file extension is not wav or WAV\n");
+        return 0;
     }
-    fclose(fin);
-    fclose(fout);
+    else{
+        return 1;
+    }
 }
