@@ -7,18 +7,22 @@ int filename(char *ptr);
 int main() {
     char name[200], chunkid[4], format[4], subchunk1id[4];
     char *ptr = name;
-    int check=0;
+    int check = 0;
     unsigned int chunksize, samplerate, subchunk1size, byterate;
-    unsigned short int audioformat, numchannels, blockalign,samplebits;
+    unsigned short int audioformat, numchannels, blockalign, samplebits;
+
     FILE *fp;
+    check = filename(ptr);
+    fp = fopen(ptr,"r+b");
+
+    while ((check == 0) || (fp == NULL)) 
+    {
+        if(fp==NULL) printf("File doesn't exist. Please enter another name:\n");
         check = filename(ptr);
         fp = fopen(ptr,"r+b");
-        while ((check == 0) || (fp == NULL)) {
-        if (fp==NULL) printf("this file doesn't exist, enter another name:\n");
-        check = filename(ptr);
-        fp = fopen(ptr,"r+b");
-        }
-    fread(chunkid,4,1,fp);
+    }
+
+    fread(chunkid, 4,1,fp);
     printf("%.4s\n",chunkid);
 
     fread(&chunksize,4,1,fp);
@@ -66,16 +70,15 @@ int main() {
 }
 
 int filename(char *ptr){
-    printf("enter the file name:\n");
+    printf("Please enter the file name:\n");
     gets(ptr);
-    char check1 = strstr(ptr,".wav");
-    char check2 = strstr(ptr,".WAV");
+    char check1 = strstr(ptr, ".wav");
+    char check2 = strstr(ptr, ".WAV");
     
-    if (check1 == NULL && check2 == NULL){
+    if (check1 == NULL || check2 == NULL){
         printf("your file extension is not wav or WAV\n");
         return 0;
     }
-    else{
+    else
         return 1;
-    }
 }

@@ -6,7 +6,22 @@
 */
 /* H******************************************************************* */
 
-/* H******************************************************************* */
+/* Program homework notes******************************************************************* */
+/* Audio Files********************************************/
+/*
+WAV format- must be stored in file extensions of *.wav. 
+- WAV format is a subset of Microsoft's RIFF specification for storing 
+multimedia files.
+- RIFF files- starts with a file header followed by a sequence of data chunks.
+- WAV files are RIFF files with 3 chunks:
+    1. indicates the file is a RIFF WAV file.
+    2. Header of a "fmt" chunk; specifies the data format, like stereo. 
+    3. "Data" chunk containing the actual sample data stored in the format
+    specified in the "fmt" chunk.
+
+    Ex. A WAV PCM file is stored in an uncompressed format; PCM means
+    pulse-code-modulation; in this case it means uncompressed mode.
+*/
 
 /* Written homework notes******************************************************************* */
 // Section 7.3*******************************************
@@ -24,7 +39,7 @@ Functions:
 
 // Section 9.1*******************************************
 /*
-Diff btwn mode r and r+, w and w+
+Diff btwn mode r and r+, w and w+, r+b (read-write-binary)
 
 Functions: 
 stdin-
