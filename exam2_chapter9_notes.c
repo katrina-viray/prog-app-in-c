@@ -86,7 +86,45 @@ char ans[2];
 gets(ans);
 
 /* Chapter 9.5: Formatted Input/Output*************/
-/* scanf, fscanf, and sscanf- all are identical except for their input. */
+/* scanf, fscanf, and sscanf- all are identical except for their input.
+    fscanf- reads from an arbitrary file
+    scanf- reads from standard input 
+    - These scanning functions expect a format string and an address list.
+        - Format string- specifies which chars should be taken from the input and 
+        how to interpret them
+        - Address list- the matching item in the address list specifies which chars 
+        should be stored.
+    - Each function returns EOF if it reaches the end w/out doing any conversions;
+    otherwise, it returns the # of successful conversions that were stored.*/
+
+    /* This program scans the standard input for: integer w/at most 2 digits,
+    string with max length 4 and 1 for terminating null, and floating point 
+    for no more than 4 decimal chars.
+    Given the input 44mice2.97, it would return 3 bc it successfully converted 
+    3 items: (44 into integer, "mice" into string, etc) */
+    char string[5];
+    int integer;
+    float real;
+    scanf("%2d%4s%4f", &integer, string, &real);
+    
+    /* printf, fprintf, and sprintf- counterparts to scan except they 
+    provide formatted output. 
+    NOTE*- sprintf, like its counterpart sscanf, writes to an array trather than
+    to a file/standard output or input. */
+
+    /* Character-conversions: check table on page 462. These include 
+    tolower, toupper, etc. */
+
+/* Chapter 9.6: Unformatted Input/Output*************/
+/* fwrite- writes binary data; writes blocks of data w/out formatting
+    to a file opened in binary mode..
+   fread- reads unformatted binary data from a file. */
+
+/* Chapter 9: Moving around in a File*************/
+/* fseek. ftell, and rewind can change/determine the location of the file position marker. */
+
+/* Chapter 9: H*************/
+
 
 /* Chapter 9: H*************/
 
