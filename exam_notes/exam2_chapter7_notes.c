@@ -160,47 +160,5 @@ void print_names(char** p, int n);
 /* Chapter 8: H*************/
 
 
-
-
-
-/* Chapter 9.1: Opening and Closing Files (in the stdio.h library)*************/
-/* Modes used when opening a file:
-   "r" --> reading, error if file does not exist 
-   "w" --> opens new file for writing, makes new file if file does not exist
-   "a" --> appending (write to end of file), makes new file if file does not exist.
-   "r+" --> reading and writing, error if file does not exist 
-   "w+" --> opens new file for reading and writing, makes new file if file does not exist
-   "a+" --> reading and writing to end of file, makes new file if file does not exist
-   NOTE**: if already existing file is opened w/"w" or "w+", old contents are discarded*/
-
-/* Above, those modes are used for "text file" types. However, it is also
-   possible to open "binary files". To open binary files, add a "b" to the
-   mode string, like "w+b". */
-
-/* Ex. Program */
-/* fopen- if successful, returns a pointer to FILE that refs the opened file. 
-   if not, it returns NULL.
-   fclose- returns 0 is successfully closes the file and EOF otherwise. */
-
-
-/* Chapter 9: H*************/
-
-
-/* Chapter 9: H*************/
-
-
-/* Chapter 9: H*************/
-
-
-/* Chapter 9: H*************/
-
-
-/* Chapter 9: H*************/
-
-
-/* Chapter 9: H*************/
-
-
-/* Chapter 9: H*************/
 return 0;
 }

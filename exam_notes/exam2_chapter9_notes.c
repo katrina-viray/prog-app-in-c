@@ -109,7 +109,7 @@ gets(ans);
     
     /* printf, fprintf, and sprintf- counterparts to scan except they 
     provide formatted output. 
-    NOTE*- sprintf, like its counterpart sscanf, writes to an array trather than
+    NOTE*- sprintf, like its counterpart sscanf, writes to an array rather than
     to a file/standard output or input. */
 
     /* Character-conversions: check table on page 462. These include 
@@ -122,21 +122,6 @@ gets(ans);
 
 /* Chapter 9: Moving around in a File*************/
 /* fseek. ftell, and rewind can change/determine the location of the file position marker. */
-
-/* Chapter 9: H*************/
-
-
-/* Chapter 9: H*************/
-
-
-/* Chapter 9: H*************/
-
-
-/* Chapter 9: H*************/
-
-
-/* Chapter 9: H*************/
-
 
 return 0;
 }

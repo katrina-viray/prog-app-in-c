@@ -9,7 +9,7 @@ void print_instructions_and_open_file(FILE **fp) {
     char file_name[256];
     printf("Enter the name of the output file: ");
     scanf("%s", file_name);
-    *fp = fopen(file_name, "wb");
+    *fp = fopen(file_name, "w+b");
     if (*fp == NULL) {
         printf("Error: Unable to open the file.\n");
         exit(1);
