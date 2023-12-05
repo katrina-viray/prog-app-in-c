@@ -1,6 +1,9 @@
+#include <stdio.h>
+
 /* Misc.******************************************************************* */
 // 1. rand()- how to use them as seen in the prog projects*******************************************
 // 2. srand()- how to use them as seen in the prog projects*******************************************
+
 
 /* Chapter 1******************************************************************* */
 // 1. 2's comp*******************************************
@@ -95,7 +98,75 @@ a value EOF = -1 (windows) or EOF=0 (IOS).**************************************
 // 13. *******************************************
 // 14. *******************************************
 
-/* Chapter ******************************************************************* */
+/* Chapter 7******************************************************************* */
+/* Pointer variables. */
+// Example Program:
+
+/* Write a program segment to use a float pointer to print the value in a float variable to the display.✅ */
+float x=3.1,*px;
+px=&x;
+printf(“%f”, *px); // prints 3.1 to the display
+
+/* Using pointers as arguments to subroutine. */
+ // Example Program:
+// Function to swap the values of two integers using pointers
+void swap(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int num1 = 5, num2 = 10;
+
+    printf("Before swapping: num1 = %d, num2 = %d\n", num1, num2);
+
+    // Call the swap function with the addresses of num1 and num2
+    swap(&num1, &num2);
+
+    printf("After swapping: num1 = %d, num2 = %d\n", num1, num2);
+
+    return 0;
+}
+
+/* Pointers and arrays */
+ // Example Program:
+ #include <stdio.h>
+
+int main() {
+    // Declare an array of integers
+    int numbers[] = {1, 2, 3, 4, 5};
+
+    // Declare a pointer to an integer
+    int *ptr;
+
+    // Point the pointer to the beginning of the array
+    ptr = numbers;
+
+    // Access array elements using pointer notation
+    printf("Array elements using pointer notation:\n");
+    for (int i = 0; i < 5; ++i) {
+        printf("Element %d: %d\n", i, *(ptr + i));
+    }
+
+    // Modify array elements using pointer notation
+    for (int i = 0; i < 5; ++i) {
+        *(ptr + i) *= 2; // Double the value of each element
+    }
+
+    // Print the modified array using array notation
+    printf("\nArray elements after modification:\n");
+    for (int i = 0; i < 5; ++i) {
+        printf("Element %d: %d\n", i, numbers[i]);
+    }
+
+    return 0;
+}
+
+
+/* Dereferencing */
+ // Example Program:
+*/
 // 1. *******************************************
 // 2. *******************************************
 // 3. *******************************************

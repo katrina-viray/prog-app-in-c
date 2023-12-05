@@ -134,31 +134,5 @@ void print_names(char** p, int n);
    ptr(letter);
    (*ptr)(letter); // both forms work;
 
-
-
-
-
-
-/* Chapter 8: H*************/
-
-
-/* Chapter 8: H*************/
-
-
-/* Chapter 8: H*************/
-
-
-/* Chapter 8: H*************/
-
-
-/* Chapter 8: H*************/
-
-
-/* Chapter 8: H*************/
-
-
-/* Chapter 8: H*************/
-
-
 return 0;
 }
