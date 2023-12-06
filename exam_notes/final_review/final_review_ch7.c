@@ -95,14 +95,18 @@ int main(){
     /* (1 level ) of pointers are needed to have runtime allocation of 1D 
     arrays of arbitrary size. */
     int *p, *p1; // pointers to int variables
+
     /* **pointers (2 levels) are used for 2D arrays declared
     at runtime */
     int ** p2pi; // pointer to pointer to int
+
     /* *** pointers are for 3D arrays at runtime */
     int *** p2p2pi; // pointer to pointer to pointer to int.
+
     ix = 5; // changing ix from 2 to 5 (idk why lol)
     p = &ix; // pointer p points to ix
     p1 = &y; // pointer p1 points to y
+    
     /* Printing pointers: prints the memory address held by the
     pointer in hexadecimal format. Output may look something 
     like: 0x7ffd5f3489ac. The actual memory address varies each
